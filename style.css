@@ -1,0 +1,128 @@
+:root {
+    --primary-color: #e50914; /* لون أحمر سينمائي */
+    --bg-color: #141414;
+    --card-bg: #1f1f1f;
+    --text-color: #ffffff;
+    --secondary-text: #b3b3b3;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Tajawal', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgba(0,0,0,0.8);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #333;
+}
+
+h1 { margin: 0; color: var(--primary-color); font-size: 1.5rem; }
+
+#search-form { display: flex; gap: 10px; }
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background: #333;
+    color: white;
+    width: 250px;
+}
+button {
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+button:hover { background-color: #b20710; }
+
+/* شبكة الأفلام */
+#main-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+.movie-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.movie-card img { width: 100%; height: 300px; object-fit: cover; }
+
+.movie-info { padding: 15px; }
+.movie-info h3 { margin: 0 0 10px; font-size: 1rem; text-align: center; }
+
+.rating {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* نافذة التفاصيل Modal */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 200; 
+    left: 0; top: 0; 
+    width: 100%; height: 100%; 
+    background-color: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: #181818;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.modal-header { display: flex; gap: 20px; flex-wrap: wrap; }
+.modal-header img { width: 200px; border-radius: 5px; }
+.close-btn {
+    position: absolute; top: 10px; right: 20px;
+    color: white; font-size: 30px; cursor: pointer;
+}
+
+/* التجاوب */
+@media (max-width: 600px) {
+    header { flex-direction: column; gap: 15px; }
+    #search-form { width: 100%; }
+    input { width: 100%; }
+    #main-container { grid-template-columns: repeat(2, 1fr); padding: 20px; }
+}
