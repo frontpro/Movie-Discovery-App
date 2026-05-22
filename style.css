@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #e50914; /* لون أحمر سينمائي */
+    --primary-color: #e50914; 
     --bg-color: #141414;
     --card-bg: #1f1f1f;
     --text-color: #ffffff;
@@ -49,7 +49,7 @@ button {
 }
 button:hover { background-color: #b20710; }
 
-/* شبكة الأفلام */
+
 #main-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -88,7 +88,7 @@ button:hover { background-color: #b20710; }
     font-size: 0.9rem;
 }
 
-/* نافذة التفاصيل Modal */
+
 .modal {
     display: none; 
     position: fixed; 
@@ -119,7 +119,7 @@ button:hover { background-color: #b20710; }
     color: white; font-size: 30px; cursor: pointer;
 }
 
-/* التجاوب */
+
 @media (max-width: 600px) {
     header { flex-direction: column; gap: 15px; }
     #search-form { width: 100%; }

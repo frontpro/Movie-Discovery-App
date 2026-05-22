@@ -12,7 +12,7 @@ const modal = document.getElementById('movie-modal');
 const modalBody = document.getElementById('modal-body');
 const closeBtn = document.querySelector('.close-btn');
 
-// 1. تحميل الأفلام الشائعة عند فتح الصفحة
+// 1. 
 getMovies(API_URL + `/movie/popular?api_key=${API_KEY}&language=ar-SA&page=1`);
 
 async function getMovies(url) {
@@ -27,13 +27,13 @@ async function getMovies(url) {
     }
 }
 
-// 2. عرض البطاقات
+// 2. 
 function showMovies(movies) {
     main.innerHTML = '';
     movies.forEach(movie => {
         const { title, poster_path, vote_average, id, overview, backdrop_path } = movie;
         
-        // لا تعرض الفيلم إذا لم يكن له صورة
+        
         if (!poster_path) return;
 
         const movieEl = document.createElement('div');
@@ -46,13 +46,13 @@ function showMovies(movies) {
             </div>
         `;
         
-        // عند النقر، افتح التفاصيل
+      
         movieEl.addEventListener('click', () => openModal(movie));
         main.appendChild(movieEl);
     });
 }
 
-// 3. منطق البحث
+// 3. 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const searchTerm = searchInput.value;
@@ -64,7 +64,7 @@ form.addEventListener('submit', (e) => {
     }
 });
 
-// 4. نافذة التفاصيل (Modal)
+// 4. 
 function openModal(movie) {
     const { title, overview, vote_average, release_date, poster_path, backdrop_path } = movie;
     modal.style.display = 'flex';
@@ -82,7 +82,7 @@ function openModal(movie) {
     `;
 }
 
-// إغلاق النافذة
+//
 closeBtn.onclick = () => modal.style.display = 'none';
 window.onclick = (e) => {
     if (e.target == modal) modal.style.display = 'none';
