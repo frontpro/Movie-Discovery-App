@@ -1,4 +1,4 @@
-//  ضع مفتاحك هنا من موقع TMDB
+
 const API_KEY = '135b91af87c639745c63caa131d1c2b9'; 
 
 const API_URL = 'https://api.themoviedb.org/3';
